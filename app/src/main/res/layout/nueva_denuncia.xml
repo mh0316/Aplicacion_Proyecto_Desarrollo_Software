@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reporta fallas de tránsito en Temuco - rápido y sencillo"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_cerrar_sesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:textSize="12sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:background="@drawable/button_red_background"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Navegación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_inicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inicio"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:layout_marginEnd="8dp"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/btn_nueva_denuncia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nueva denuncia"
+                android:background="@drawable/button_active_background"
+                android:textColor="@color/white"
+                android:layout_marginEnd="8dp"
+                android:minHeight="48dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_ayuda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ayuda"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Paso 1: Elegir Categoría -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Elige la categoría de denuncia"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toca para seleccionar una sola categoría"
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Grid de categorías -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/grid_categorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:columnCount="2"
+                app:rowCount="4"
+                app:columnOrderPreserved="false"
+                app:alignmentMode="alignMargins"
+                android:padding="8dp">
+
+                <!-- Fila 1 -->
+                <Button
+                    android:id="@+id/btn_categoria_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="0"
+                    app:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Falta de placa patente"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btn_categoria_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="0"
+                    app:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Botar basura a la calle"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <!-- Fila 2 -->
+                <Button
+                    android:id="@+id/btn_categoria_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="1"
+                    app:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Exceso de velocidad"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btn_categoria_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="1"
+                    app:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Conducción imprudente"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <!-- Fila 3 -->
+                <Button
+                    android:id="@+id/btn_categoria_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="2"
+                    app:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Estacionar en lugar prohibido"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btn_categoria_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="2"
+                    app:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Uso de celular al conducir"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <!-- Fila 4 -->
+                <Button
+                    android:id="@+id/btn_categoria_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="3"
+                    app:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Pasarse luz roja"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+
+        <!-- Paso 2: Descripción de la denuncia -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Descripción de la denuncia"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Añade detalles: dirección, sentido, color del vehículo, matrícula visible..."
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/et_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:hint="Describe la situación en detalle..."
+                android:inputType="textMultiLine|textCapSentences"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sé objetivo y evita comentarios ofensivos o improperios."
+                android:textSize="10sp"
+                android:textColor="#EF4444"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- NUEVA SECCIÓN: Patente del vehículo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Patente del vehículo"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingresa la patente del vehículo involucrado (5-6 caracteres)"
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/et_patente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ej: AB123C"
+                android:inputType="textCapCharacters"
+                android:maxLength="6"
+                android:background="@drawable/edittext_border"
+                android:padding="12dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/tv_error_patente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La patente debe tener entre 5 y 6 caracteres"
+                android:textSize="10sp"
+                android:textColor="#EF4444"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Botón Siguiente con margen adicional -->
+        <Button
+            android:id="@+id/btn_siguiente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:background="@drawable/button_active_background"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="80dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

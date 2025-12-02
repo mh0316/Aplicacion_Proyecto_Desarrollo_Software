@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado de la aplicación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reporta fallas de tránsito en Temuco - rápido y sencillo"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Barra de navegación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_inicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inicio"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:layout_marginEnd="8dp"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/btn_nueva_denuncia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_inactive_background"
+                android:text="Nueva Denuncia"
+                android:textColor="#0F172A"
+                android:minHeight="48dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_ayuda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ayuda"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Contenedor principal del resumen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumen de Denuncia"
+                android:textSize="20sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:gravity="center" />
+
+            <!-- Categoría -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Categoría:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_categoria_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Categoría"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A" />
+            </LinearLayout>
+
+            <!-- Descripción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Descripción:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_descripcion_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Descripción"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A" />
+            </LinearLayout>
+
+            <!-- NUEVA SECCIÓN: Patente del vehículo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Patente:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_patente_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Patente"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Ubicación -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ubicación:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_ubicacion_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Ubicación"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A" />
+            </LinearLayout>
+
+            <!-- Coordenadas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Coordenadas:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_coordenadas_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="No seleccionadas"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A" />
+            </LinearLayout>
+
+            <!-- Evidencia -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Evidencia:"
+                    android:textSize="14sp"
+                    android:textColor="#6B7280" />
+
+                <TextView
+                    android:id="@+id/tv_evidencia_resumen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="No"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A" />
+            </LinearLayout>
+
+            <!-- Botones de acción -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_editar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Editar"
+                    android:background="@drawable/button_outline_background"
+                    android:textColor="#0F172A"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:id="@+id/btn_enviar_denuncia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Enviar Denuncia"
+                    android:background="@drawable/button_active_background"
+                    android:textColor="#FFFFFF"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

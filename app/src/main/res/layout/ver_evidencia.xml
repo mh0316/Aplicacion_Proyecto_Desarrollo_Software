@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado de la aplicación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="16dp">
+
+            <!-- Reemplazar ImageView con TextView temporal para evitar errores -->
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reporta fallas de tránsito en Temuco - rápido y sencillo"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Barra de navegación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_inicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Inicio"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:layout_marginEnd="8dp"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/btn_nueva_denuncia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_inactive_background"
+                android:text="Nueva Denuncia"
+                android:textColor="#0F172A"
+                android:minHeight="48dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_ayuda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ayuda"
+                android:background="@drawable/button_inactive_background"
+                android:textColor="#0F172A"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Contenedor principal de revisión de evidencia -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Revisar Evidencia"
+                android:textSize="20sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"
+                android:gravity="center" />
+
+            <!-- Vista previa de la evidencia -->
+            <FrameLayout
+                android:id="@+id/evidence_container"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#E5E7EB"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <!-- Imagen por defecto -->
+                <ImageView
+                    android:id="@+id/evidence_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="#E5E7EB"
+                    android:visibility="visible" />
+
+                <!-- Reproductor de video -->
+                <VideoView
+                    android:id="@+id/evidence_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <!-- Indicador de tipo de archivo -->
+                <TextView
+                    android:id="@+id/file_type_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:background="#0F172A"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:layout_margin="8dp"
+                    android:text="FOTO" />
+
+                <!-- Botón de reproducción simplificado -->
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#80000000"
+                    android:text="▶"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!-- Información del archivo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp"
+                android:background="#F9FAFB">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Información del archivo"
+                    android:textSize="14sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nombre:"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280" />
+
+                    <TextView
+                        android:id="@+id/tv_file_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="foto_denuncia_001.jpg"
+                        android:textSize="12sp"
+                        android:textColor="#0F172A" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tamaño:"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280" />
+
+                    <TextView
+                        android:id="@+id/tv_file_size"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="2.4 MB"
+                        android:textSize="12sp"
+                        android:textColor="#0F172A" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Fecha:"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280" />
+
+                    <TextView
+                        android:id="@+id/tv_file_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="15/10/2023 14:30"
+                        android:textSize="12sp"
+                        android:textColor="#0F172A" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Botón Volver centrado -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_volver"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Volver"
+                    android:background="@drawable/button_active_background"
+                    android:textColor="#FFFFFF"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Encabezado con botón de cerrar sesión -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reporta fallas de tránsito en Temuco - rápido y sencillo"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <!-- Botón de Cerrar Sesión -->
+            <Button
+                android:id="@+id/btn_cerrar_sesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:textSize="12sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:background="@drawable/button_red_background"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Barra de navegación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btn_inicio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_active_background"
+                android:text="@string/inicio"
+                android:textColor="@color/white"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/btn_nueva_denuncia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_inactive_background"
+                android:text="@string/nueva_denuncia"
+                android:textColor="#0F172A"
+                android:minHeight="48dp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btn_ayuda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_inactive_background"
+                android:text="Ayuda"
+                android:textColor="#0F172A"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <!-- Contenido de la aplicación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Últimas denuncias"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver denuncias en tu área"
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="#F8FAFC"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="#F3F4F6"
+                    android:gravity="center"
+                    android:text="📷"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="12dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Exceso de velocidad - Av. Alemania"
+                        android:textSize="14sp"
+                        android:textColor="#0F172A"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="24 oct → Pendiente"
+                        android:textSize="12sp"
+                        android:textColor="#6B7280"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tu participación ayuda a mejorar la seguridad vial. Mantén evidencia clara y respetuosa."
+                android:textSize="12sp"
+                android:textColor="#6B7280"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Estadísticas de denuncias"
+                android:textSize="16sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Av. Alemania: 208 denuncias"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Centro: 187 denuncias"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parque Ñielol: 156 denuncias"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Villa Los Profes: 134 denuncias"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="X 15% más denuncias que el mes anterior"
+                android:textSize="12sp"
+                android:textColor="#10B981"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

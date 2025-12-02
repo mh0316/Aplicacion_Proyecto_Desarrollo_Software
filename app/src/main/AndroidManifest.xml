@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permisos esenciales -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permisos de almacenamiento -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <!-- Permisos de ubicación -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Permisos de cámara -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permisos para OSMDroid -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Características opcionales -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+
+    <application
+        android:name=".AppTransitoApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppTransito"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31"
+        tools:ignore="ExtraText,GoogleAppIndexingWarning">
+
+    <!-- Actividad de Login -->
+    <activity
+        android:name=".LoginActivity"
+        android:exported="true"
+        android:label="Login - DT Denuncias"
+        android:theme="@style/Theme.AppTransito">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <!-- Actividad de Registro -->
+    <activity
+        android:name=".RegistroActivity"
+        android:exported="false"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad de Inicio -->
+    <activity
+        android:name=".InicioActivity"
+        android:exported="false"
+        android:label="Denuncias de Tránsito"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para la primera parte de Nueva Denuncia -->
+    <activity
+        android:name=".NuevaDenunciaActivity"
+        android:exported="false"
+        android:label="Nueva Denuncia"
+        android:windowSoftInputMode="adjustResize|stateHidden"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para la segunda parte de Nueva Denuncia -->
+    <activity
+        android:name=".NuevaDenuncia2Activity"
+        android:exported="false"
+        android:label="Nueva Denuncia - Paso 2"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para la Ayuda -->
+    <activity
+        android:name=".AyudaActivity"
+        android:exported="false"
+        android:label="Ayuda - DT Denuncias"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para Revisar Evidencia -->
+    <activity
+        android:name=".RevisarEvidenciaActivity"
+        android:exported="false"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para Resumen de Denuncia -->
+    <activity
+        android:name=".ResumenDenunciaActivity"
+        android:exported="false"
+        android:theme="@style/Theme.AppTransito" />
+
+    <!-- Actividad para Recuperar Contraseña -->
+    <activity
+        android:name=".RecuperacionContraseniaActivity"
+        android:exported="false"
+        android:label="Recuperar Contraseña"
+        android:theme="@style/Theme.AppTransito" />
+
+</application>
+</manifest>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Denuncias de Tránsito</string>
+    <string name="nueva_denuncia">Nueva denuncia</string>
+    <string name="inicio">Inicio</string>
+    <string name="ayuda">Ayuda</string>
+</resources>

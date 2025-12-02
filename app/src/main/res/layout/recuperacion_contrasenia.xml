@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Logo/Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="32dp">
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recuperar Contraseña"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Formulario de Recuperación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recuperar Contraseña"
+                android:textSize="20sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Campo Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo Electrónico"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Ej: nicolas.gutierrez@email.com"
+                android:textColor="#0F172A"
+                android:textColorHint="#6B7280"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Campo Nueva Contraseña -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nueva Contraseña (máx. 10 caracteres)"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Ingrese nueva contraseña"
+                android:textColor="#0F172A"
+                android:textColorHint="#6B7280"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Campo Confirmar Nueva Contraseña -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar Nueva Contraseña"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etConfirmNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Confirme nueva contraseña"
+                android:textColor="#0F172A"
+                android:textColorHint="#6B7280"
+                android:inputType="textPassword"
+                android:maxLength="10"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Botón Confirmar Nueva Contraseña -->
+            <Button
+                android:id="@+id/btnConfirmNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Confirmar Nueva Contraseña"
+                android:background="@drawable/button_active_background"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Botón Volver -->
+            <Button
+                android:id="@+id/btnBackToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Volver"
+                android:background="@drawable/button_outline_background"
+                android:textColor="#0F172A"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

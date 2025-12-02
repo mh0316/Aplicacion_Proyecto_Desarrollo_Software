@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F4F6"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Logo/Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="32dp">
+
+            <!-- Reemplazamos ImageView con TextView temporal -->
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#0EA5A4"
+                android:gravity="center"
+                android:text="DT"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DT Denuncias de Tránsito"
+                    android:textSize="18sp"
+                    android:textColor="#0F172A"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Iniciar Sesión"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Formulario de Login -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesión"
+                android:textSize="20sp"
+                android:textColor="#0F172A"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Campo RUT -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo electrónico"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Ej: nicolas.gutierrez@email.com"
+                android:textColor="#0F172A"
+                android:textColorHint="#6B7280"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Campo Contraseña -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contraseña"
+                android:textSize="14sp"
+                android:textColor="#0F172A"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Ingrese su contraseña"
+                android:textColor="#0F172A"
+                android:textColorHint="#6B7280"
+                android:inputType="textPassword"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Botón Iniciar Sesión -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Iniciar Sesión"
+                android:background="@drawable/button_active_background"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Enlace a Registro -->
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿No tienes cuenta? Regístrate aquí"
+                android:textSize="14sp"
+                android:textColor="#2196F3"
+                android:gravity="center"
+                android:padding="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Enlace a Recuperar Contraseña -->
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Olvidaste tu contraseña?"
+                android:textSize="14sp"
+                android:textColor="#2196F3"
+                android:gravity="center"
+                android:padding="12dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
