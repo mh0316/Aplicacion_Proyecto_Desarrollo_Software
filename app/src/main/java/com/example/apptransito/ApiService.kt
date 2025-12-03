@@ -11,6 +11,12 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.http.PUT
 
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import retrofit2.http.Multipart
+import retrofit2.http.Part
+import retrofit2.http.Path
+
 interface ApiService {
 
     // Registro
@@ -33,4 +39,11 @@ interface ApiService {
 
     @POST("denuncias")
     suspend fun enviarDenuncia(@Body denuncia: DenunciaRequest): Response<DenunciaResponse>
+
+    @Multipart
+    @POST("denuncias/{id}/evidencias")
+    suspend fun subirEvidencia(
+        @Path("id") id: Long,
+        @Part archivo: MultipartBody.Part
+    ): Response<Any>
 }

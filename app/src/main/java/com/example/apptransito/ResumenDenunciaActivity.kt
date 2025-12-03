@@ -12,6 +12,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 
 class ResumenDenunciaActivity : ComponentActivity() {
 
@@ -209,17 +213,15 @@ class ResumenDenunciaActivity : ComponentActivity() {
                 // Mostrar progreso
                 Toast.makeText(this@ResumenDenunciaActivity, "Enviando denuncia...", Toast.LENGTH_SHORT).show()
 
-                // Crear objeto DenunciaRequest con todos los campos incluyendo evidencia
+                // Crear objeto DenunciaRequest con todos los campos
+                // NOTA: Los campos de evidencia se manejan por separado
                 val denunciaRequest = DenunciaRequest(
                     email = userEmail,
                     categoriaId = categoriaId,
                     descripcion = descripcion,
-                    evidenciaUri = evidenciaUri,  // Incluir URI de evidencia
                     latitud = latitud,
                     longitud = longitud,
                     patente = if (patente != "No especificada") patente else null,
-                    tieneEvidencia = tieneEvidencia,  // Indicar si tiene evidencia
-                    tipoEvidencia = if (tieneEvidencia) tipoEvidencia else null,  // Tipo de evidencia
                     direccion = ubicacion,
                     sector = "Centro",
                     comuna = "Temuco"
@@ -227,10 +229,41 @@ class ResumenDenunciaActivity : ComponentActivity() {
 
                 println("DEBUG: Enviando denuncia con request: $denunciaRequest")
 
-                // Enviar al servidor usando Retrofit
+                // 1. Enviar datos de la denuncia
                 val response = RetrofitClient.apiService.enviarDenuncia(denunciaRequest)
 
-                if (response.isSuccessful) {
+                if (response.isSuccessful && response.body()?.success == true) {
+                    val denunciaId = response.body()?.denuncia?.id
+                    println("DEBUG: Denuncia creada con ID: $denunciaId")
+
+                    // 2. Subir evidencia si existe
+                    if (tieneEvidencia && denunciaId != null && evidenciaUri != null) {
+                        try {
+                            Toast.makeText(this@ResumenDenunciaActivity, "Subiendo evidencia...", Toast.LENGTH_SHORT).show()
+                            val uri = Uri.parse(evidenciaUri)
+                            val file = getFileFromUri(uri)
+                            
+                            if (file != null) {
+                                val mediaType = if (tipoEvidencia == "video") "video/*".toMediaTypeOrNull() else "image/*".toMediaTypeOrNull()
+                                val requestFile = file.asRequestBody(mediaType)
+                                val body = MultipartBody.Part.createFormData("archivo", file.name, requestFile)
+                                
+                                val uploadResponse = RetrofitClient.apiService.subirEvidencia(denunciaId, body)
+                                if (!uploadResponse.isSuccessful) {
+                                    println("Error subiendo evidencia: ${uploadResponse.errorBody()?.string()}")
+                                    Toast.makeText(this@ResumenDenunciaActivity, "Denuncia creada pero error al subir evidencia", Toast.LENGTH_LONG).show()
+                                } else {
+                                    println("DEBUG: Evidencia subida exitosamente")
+                                }
+                            } else {
+                                println("ERROR: No se pudo crear archivo temporal desde URI")
+                            }
+                        } catch (e: Exception) {
+                            println("Error preparando evidencia: ${e.message}")
+                            e.printStackTrace()
+                        }
+                    }
+
                     val mensaje = """
                     Denuncia enviada correctamente:
                     - Categoría: $categoriaNombre
@@ -267,6 +300,25 @@ class ResumenDenunciaActivity : ComponentActivity() {
                 ).show()
                 e.printStackTrace()
             }
+        }
+    }
+
+    private fun getFileFromUri(uri: Uri): File? {
+        return try {
+            val contentResolver = applicationContext.contentResolver
+            val inputStream = contentResolver.openInputStream(uri) ?: return null
+            val extension = if (tipoEvidencia == "video") ".mp4" else ".jpg"
+            val tempFile = File.createTempFile("upload", extension, cacheDir)
+            tempFile.deleteOnExit()
+            inputStream.use { input ->
+                tempFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+            }
+            tempFile
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
         }
     }
 

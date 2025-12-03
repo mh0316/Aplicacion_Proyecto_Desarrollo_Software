@@ -10,12 +10,12 @@ class DenunciaRepository {
                 email = denuncia.usuarioEmail,
                 categoriaId = obtenerCategoriaId(denuncia.categoria), // Convertir nombre a ID
                 descripcion = denuncia.descripcion,
-                evidenciaUri = denuncia.evidenciaUri,
+                // evidenciaUri = denuncia.evidenciaUri,            // No se envía en la petición, se envía en otra petición, ya que es Multipart
                 latitud = denuncia.latitud,
                 longitud = denuncia.longitud,
                 patente = denuncia.patente,
-                tieneEvidencia = denuncia.tieneEvidencia,
-                tipoEvidencia = denuncia.tipoEvidencia,
+                // tieneEvidencia = denuncia.tieneEvidencia,        // No se envía en la petición, se envía en otra petición, ya que es Multipart
+                // tipoEvidencia = denuncia.tipoEvidencia,        // No se envía en la petición, se envía en otra petición, ya que es Multipart 
                 direccion = denuncia.ubicacion, // Mapear ubicacion a direccion
                 sector = "Centro", // Valor por defecto o calcularlo
                 comuna = "Temuco"  // Valor por defecto o calcularlo

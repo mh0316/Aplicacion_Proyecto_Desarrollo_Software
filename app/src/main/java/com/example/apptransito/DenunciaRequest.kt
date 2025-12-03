@@ -6,13 +6,10 @@ data class DenunciaRequest(
     val email: String,
     val categoriaId: Int,
     val descripcion: String,
-    val evidenciaUri: String?,
     val latitud: Double,
     val longitud: Double,
     val patente: String?,
-    val tieneEvidencia: Boolean,
-    val tipoEvidencia: String?,
-    val direccion: String,  // Cambiado de "ubicacion" a "direccion"
-    val sector: String = "Centro",  // Nuevo campo
-    val comuna: String = "Temuco"   // Nuevo campo
+    val direccion: String,
+    val sector: String = "Centro",
+    val comuna: String = "Temuco"
 )
