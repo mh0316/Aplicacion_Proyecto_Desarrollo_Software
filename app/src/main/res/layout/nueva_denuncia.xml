@@ -147,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:columnCount="2"
-                app:rowCount="4"
+                app:rowCount="5"
                 app:columnOrderPreserved="false"
                 app:alignmentMode="alignMargins"
                 android:padding="8dp">
@@ -162,7 +162,7 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Falta de placa patente"
+                    android:text="Exceso de velocidad"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
                     android:textSize="12sp"
@@ -193,10 +193,10 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Exceso de velocidad"
+                    android:text="Estacionamiento en lugar prohibido"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:padding="12dp" />
 
                 <Button
@@ -208,7 +208,7 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Conducción imprudente"
+                    android:text="Vehículo mal estacionado"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
                     android:textSize="12sp"
@@ -224,10 +224,10 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Estacionar en lugar prohibido"
+                    android:text="No respetar señal de pare"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:padding="12dp" />
 
                 <Button
@@ -239,7 +239,7 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Uso de celular al conducir"
+                    android:text="No respetar luz roja"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
                     android:textSize="12sp"
@@ -255,7 +255,53 @@
                     android:layout_margin="4dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill"
-                    android:text="Pasarse luz roja"
+                    android:text="Conducir en contravía"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btn_categoria_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="3"
+                    app:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Obstrucción de vía pública"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="11sp"
+                    android:padding="12dp" />
+
+                <!-- Fila 5 -->
+                <Button
+                    android:id="@+id/btn_categoria_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="4"
+                    app:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Vehículo abandonado"
+                    android:background="@drawable/button_category_background"
+                    android:textColor="#0F172A"
+                    android:textSize="12sp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btn_categoria_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_row="4"
+                    app:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill"
+                    android:text="Otro"
                     android:background="@drawable/button_category_background"
                     android:textColor="#0F172A"
                     android:textSize="12sp"

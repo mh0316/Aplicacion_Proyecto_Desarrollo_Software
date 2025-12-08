@@ -36,7 +36,7 @@ class ResumenDenunciaActivity : ComponentActivity() {
     private lateinit var tipoEvidencia: String
     private var evidenciaUri: String? = null
 
-    // Mapeo de IDs de categoría a nombres (para mostrar en UI)
+    // Mapeo de IDs de categoría a nombres (debe coincidir exactamente con el backend)
     private val categoriasMap = mapOf(
         1 to "Exceso de velocidad",
         2 to "Botar basura a la calle",

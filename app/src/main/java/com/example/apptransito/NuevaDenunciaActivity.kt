@@ -31,15 +31,18 @@ class NuevaDenunciaActivity : ComponentActivity() {
     private lateinit var tvErrorPatente: TextView
     private lateinit var tokenManager: TokenManager
 
-    // Mapeo de categorías a IDs
+    // Mapeo de categorías a IDs (debe coincidir exactamente con el backend)
     private val categoriasMap = mapOf(
-        "Falta de placa patente" to 1,
-        "Exceso de velocidad" to 2,
-        "Estacionar en lugar prohibido" to 3,
-        "Pasarse luz roja" to 4,
-        "Botar basura a la calle" to 5,
-        "Conducción improdudente" to 6,
-        "Uso de celular al conducir" to 7
+        "Exceso de velocidad" to 1,
+        "Botar basura a la calle" to 2,
+        "Estacionamiento en lugar prohibido" to 3,
+        "Vehículo mal estacionado" to 4,
+        "No respetar señal de pare" to 5,
+        "No respetar luz roja" to 6,
+        "Conducir en contravía" to 7,
+        "Obstrucción de vía pública" to 8,
+        "Vehículo abandonado" to 9,
+        "Otro" to 10
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
